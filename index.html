@@ -50,7 +50,6 @@ header {
 nav { display:flex; gap:22px; font-size:13px; }
 nav a { white-space:nowrap; }
 
-/* ヒーローセクション：研究室の焚火背景 */
 .hero {
   position:relative; min-height:520px; display:flex; align-items:center;
   color:var(--white); overflow:hidden; isolation:isolate;
@@ -58,7 +57,6 @@ nav a { white-space:nowrap; }
     linear-gradient(90deg, rgba(30,22,16,.92) 0%, rgba(30,22,16,.75) 45%, rgba(30,22,16,.30) 85%),
     linear-gradient(0deg, rgba(30,22,16,.4), transparent 60%),
     url("assets/hero-scene.jpg") center center / cover no-repeat,
-    url("hero-scene.jpg") center center / cover no-repeat,
     #302319;
 }
 .hero-content { width:min(1120px, calc(100% - 40px)); margin:auto; padding:65px 0; }
@@ -187,15 +185,15 @@ footer strong { font-size:17px; font-weight:500; }
     <div class="intro-copy">
       <h2 class="section-title">研究室について <small>ABOUT</small></h2>
       <p>国際信州学院大学の研究室を舞台に、ふたりの准教授が焚火を囲みながら語り合う雑談ポッドキャストです。</p>
-      <p>工学的なアプローチから身近な疑問、日常の観察、時には脱線した議論まで。研究室の中央では直火の薪が静かに燃えています、ふたりは何事もないように対話を続けています。</p>
+      <p>工学的なアプローチから身近な疑問、日常の観察、時には脱線した議論まで。研究室の中央では直火の薪が静かに燃えていますが、ふたりは何事もないように対話を続けています。</p>
       <p>室内での火気使用および安全管理基準については、現在も研究室内で慎重に継続審議中です。</p>
     </div>
     <div>
       <h2 class="section-title">登場人物 <small>CHARACTERS</small></h2>
       <div class="people">
-        <!-- 上野隆盛 -->
+        <!-- 上野隆盛（assets/profile-ueno-v3.png に変更） -->
         <article class="person">
-          <img src="assets/profile-ueno-v3.jpg" onerror="this.onerror=null; this.src='profile-ueno-v3.jpg';" alt="上野隆盛 准教授" class="person-photo" width="300" height="300">
+          <img src="assets/profile-ueno-v3.png" alt="上野隆盛 准教授" class="person-photo" width="300" height="300">
           <div class="person-header">
             <h3>上野 隆盛</h3>
             <div class="kana">うえの りゅうせい</div>
@@ -203,16 +201,14 @@ footer strong { font-size:17px; font-weight:500; }
           </div>
           <ul class="person-profile">
             <li><strong>職位:</strong> 工学博士・准教授（27歳）</li>
-            <li><strong>体格:</strong> 190cm / 80kg（筋肉質・すらっとした縦長シルエット）</li>
-            <li><strong>外見:</strong> 一重の横浜流星イメージ（明確なイケメン）</li>
-            <li><strong>服装:</strong> 常時ユニクロの紺色セットアップ</li>
-            <li><strong>住居:</strong> 一戸建て（妻子持ち）</li>
+            <li><strong>体格:</strong> 190cm / 80kg</li>
+            <li><strong>住居:</strong> 一戸建て・妻子持ち</li>
           </ul>
         </article>
 
-        <!-- 滝沢朗 -->
+        <!-- 滝沢朗（assets/profile-takizawa-v3.jpg） -->
         <article class="person">
-          <img src="assets/profile-takizawa-v3.jpg" onerror="this.onerror=null; this.src='profile-takizawa-v3.jpg';" alt="滝沢朗 准教授" class="person-photo" width="300" height="300">
+          <img src="assets/profile-takizawa-v3.jpg" alt="滝沢朗 准教授" class="person-photo" width="300" height="300">
           <div class="person-header">
             <h3>滝沢 朗</h3>
             <div class="kana">たきざわ あきら</div>
@@ -220,10 +216,8 @@ footer strong { font-size:17px; font-weight:500; }
           </div>
           <ul class="person-profile">
             <li><strong>職位:</strong> 工学博士・准教授（27歳）</li>
-            <li><strong>体格:</strong> 175cm / 100kg（色白・痩せ顔）</li>
-            <li><strong>外見:</strong> 若い大泉洋イメージのきつい天パ（親しみやすい顔立ち）</li>
-            <li><strong>服装:</strong> 落ち着いたエスニック調の服（露出した腕 / 指輪・腕チャーム）</li>
-            <li><strong>婚歴:</strong> バツ12（全10指の指輪＋腕チャーム2個）</li>
+            <li><strong>体格:</strong> 175cm / 100kg</li>
+            <li><strong>婚歴:</strong> バツ12の妹思い。</li>
           </ul>
         </article>
       </div>
@@ -252,8 +246,9 @@ footer strong { font-size:17px; font-weight:500; }
 
     <div class="panel" id="sponsors">
       <h2 class="section-title">協力企業 <small>SPONSORS</small></h2>
+      <!-- 真田プロレス：assets/logo_sanada.png に変更 -->
       <article class="sponsor">
-        <img src="assets/logo-sanada-pro-wrestling.png" onerror="this.onerror=null; this.src='logo-sanada-pro-wrestling.png';" alt="真田プロレス ロゴ" class="sponsor-logo">
+        <img src="assets/logo_sanada.png" alt="真田プロレス ロゴ" class="sponsor-logo">
         <div>
           <h3>真田プロレス</h3>
           <p>忍びの流れをくむ、地域密着型プロレス団体。</p>
@@ -261,8 +256,9 @@ footer strong { font-size:17px; font-weight:500; }
         </div>
       </article>
 
+      <!-- RVパーク たぬき寝入り：assets/logo_tanukineiri.png に変更 -->
       <article class="sponsor">
-        <img src="assets/logo-tanukineiri-rvpark.png" onerror="this.onerror=null; this.src='logo-tanukineiri-rvpark.png';" alt="RVパーク たぬき寝入り ロゴ" class="sponsor-logo">
+        <img src="assets/logo_tanukineiri.png" alt="RVパーク たぬき寝入り ロゴ" class="sponsor-logo">
         <div>
           <h3>RVパーク「たぬき寝入り」</h3>
           <p>旅の途中に、心安らぐひと休みを。</p>
@@ -270,8 +266,9 @@ footer strong { font-size:17px; font-weight:500; }
         </div>
       </article>
 
+      <!-- 写真館 四田心：assets/logo-shitagokoro-photo.png -->
       <article class="sponsor">
-        <img src="assets/logo-shitagokoro-photo.png" onerror="this.onerror=null; this.src='logo-shitagokoro-photo.png';" alt="写真館 四田心 ロゴ" class="sponsor-logo">
+        <img src="assets/logo-shitagokoro-photo.png" alt="写真館 四田心 ロゴ" class="sponsor-logo">
         <div>
           <h3>写真館 四田心 <span class="kana">（したごころ）</span></h3>
           <p>大切な瞬間を、ずっと、あなたのそばに。</p>
