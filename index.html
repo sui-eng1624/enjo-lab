@@ -30,6 +30,7 @@ body {
 a { color: inherit; text-decoration: none; }
 a:hover { opacity: .78; }
 .wrap { width: min(1120px, calc(100% - 40px)); margin: auto; }
+
 header {
   background: var(--walnut-2);
   color: var(--ivory);
@@ -50,100 +51,108 @@ nav { display:flex; gap:22px; font-size:13px; }
 nav a { white-space:nowrap; }
 
 .hero {
-  position:relative; min-height:540px; display:flex; align-items:center;
+  position:relative; min-height:480px; display:flex; align-items:center;
   color:var(--white); overflow:hidden; isolation:isolate;
   background:
-    linear-gradient(90deg, rgba(30,22,16,.94) 0%, rgba(30,22,16,.78) 34%, rgba(30,22,16,.10) 75%),
-    linear-gradient(0deg, rgba(30,22,16,.25), transparent 50%),
-    url("assets/hero-scene.jpg") center 42% / cover no-repeat,
+    linear-gradient(90deg, rgba(30,22,16,.94) 0%, rgba(30,22,16,.80) 40%, rgba(30,22,16,.20) 80%),
+    linear-gradient(0deg, rgba(30,22,16,.3), transparent 60%),
     #302319;
 }
-.hero:after {
-  content:""; position:absolute; inset:0; z-index:-1;
-  background:linear-gradient(90deg, rgba(35,25,17,.2), transparent 70%);
-}
-.hero-content { width:min(1120px, calc(100% - 40px)); margin:auto; padding:70px 0; }
+.hero-content { width:min(1120px, calc(100% - 40px)); margin:auto; padding:60px 0; }
 .eyebrow { font-size:12px; letter-spacing:.13em; opacity:.85; }
-.hero h1 { font-size:clamp(35px, 5vw, 62px); line-height:1.28; font-weight:500; margin:18px 0; letter-spacing:.03em; }
-.hero .lead { font-size:clamp(18px, 2.4vw, 25px); margin:0 0 14px; }
-.hero p { max-width:480px; font-size:14px; }
+.hero h1 { font-size:clamp(34px, 5vw, 60px); line-height:1.28; font-weight:500; margin:16px 0; letter-spacing:.03em; }
+.hero .lead { font-size:clamp(18px, 2.4vw, 24px); margin:0 0 14px; color:#e9d9bd; }
+.hero p { max-width:500px; font-size:14px; line-height:1.8; }
 .button {
-  display:inline-flex; align-items:center; gap:10px; padding:12px 22px;
+  display:inline-flex; align-items:center; gap:10px; padding:12px 24px;
   background:var(--amber); color:#fffaf2; border-radius:99px;
-  font-size:14px; border:0; white-space:nowrap;
+  font-size:14px; border:0; white-space:nowrap; font-weight:500;
+  box-shadow: 0 2px 6px rgba(0,0,0,.15);
 }
 
 main { padding:52px 0 66px; }
-.section-title { display:flex; align-items:baseline; gap:13px; margin:0 0 22px; font-size:25px; font-weight:500; }
+.section-title { display:flex; align-items:baseline; gap:13px; margin:0 0 22px; font-size:25px; font-weight:500; border-bottom: 2px solid var(--amber); padding-bottom: 6px; }
 .section-title small { font:10px sans-serif; letter-spacing:.1em; color:var(--muted); }
-.intro-grid { display:grid; grid-template-columns:1fr 1.1fr; gap:36px; }
+
+.intro-grid { display:grid; grid-template-columns:1fr 1.35fr; gap:36px; }
 .intro-copy { padding-right:26px; border-right:1px solid var(--line); }
 .intro-copy p { font-size:14px; }
 
-.people { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-.person { border:1px solid var(--line); border-radius:6px; padding:18px; background:rgba(255,250,242,.65); }
-.person h3 { margin:6px 0 2px; font-size:20px; font-weight:500; }
+.people { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.person {
+  border:1px solid var(--line); border-radius:8px; padding:18px;
+  background:var(--white); box-shadow: 0 2px 8px rgba(69,53,40,.06);
+  display:flex; flex-direction:column; align-items:center; text-align:left;
+}
+.person-photo {
+  width:160px; height:160px; object-fit:cover;
+  border-radius:6px; border:1px solid var(--line); margin-bottom:14px;
+  background:var(--paper);
+}
+.person-header { width:100%; border-bottom:1px solid var(--line); padding-bottom:8px; margin-bottom:10px; }
+.person h3 { margin:0; font-size:20px; font-weight:500; color:var(--walnut); }
 .person .kana { font-size:11px; color:var(--muted); margin-bottom:6px; }
-.person .role { display:inline-block; background:var(--amber); color:white; border-radius:99px; padding:2px 10px; font-size:11px; margin-bottom:10px; }
-.person-profile { font-size:12px; margin:0; padding:0; list-style:none; line-height:1.6; }
-.person-profile li { margin-bottom:4px; padding-bottom:4px; border-bottom:1px dashed var(--line); }
-.person-profile li strong { color:var(--walnut); }
+.person .role { display:inline-block; background:var(--amber); color:white; border-radius:99px; padding:2px 12px; font-size:11px; font-weight:bold; }
+.person .role.sub { background:var(--olive); }
+.person-profile { font-size:12px; margin:0; padding:0; list-style:none; line-height:1.65; width:100%; }
+.person-profile li { margin-bottom:5px; padding-bottom:5px; border-bottom:1px dashed var(--line); }
+.person-profile li:last-child { border-bottom:none; margin-bottom:0; }
+.person-profile li strong { color:var(--walnut); font-weight:600; }
 
-.lower-grid { display:grid; grid-template-columns:1fr 1.1fr .9fr; gap:24px; margin-top:48px; padding-top:30px; border-top:1px solid var(--line); }
+.lower-grid { display:grid; grid-template-columns:1fr 1.15fr .85fr; gap:24px; margin-top:52px; padding-top:32px; border-top:1px solid var(--line); }
 .panel { min-width:0; }
 .panel + .panel { border-left:1px solid var(--line); padding-left:24px; }
 
-.episode-box { background:var(--white); padding:20px; border-radius:6px; border:1px solid var(--line); }
-.episode-box h3 { margin:0 0 10px; font-size:18px; font-weight:500; }
-.episode-box p { font-size:13px; color:var(--ink); margin-bottom:15px; }
+.episode-box { background:var(--white); padding:20px; border-radius:8px; border:1px solid var(--line); }
+.episode-box h3 { margin:0 0 10px; font-size:17px; font-weight:500; color:var(--walnut); }
+.episode-box p { font-size:13px; color:var(--ink); margin-bottom:16px; }
 
 .platform-links { display:flex; flex-direction:column; gap:10px; }
 .platform-btn {
   display:flex; align-items:center; justify-content:space-between;
-  padding:10px 16px; background:var(--paper); border:1px solid var(--line);
+  padding:11px 16px; background:var(--paper); border:1px solid var(--line);
   border-radius:6px; font-size:13px; font-weight:500; color:var(--walnut);
 }
 .platform-btn:hover { background:var(--amber); color:var(--white); }
 
 .sponsor {
-  display:grid; grid-template-columns:85px 1fr; gap:14px; align-items:center;
+  display:grid; grid-template-columns:80px 1fr; gap:14px; align-items:center;
   background:var(--white); padding:12px; margin-bottom:12px; border-radius:6px;
   border:1px solid var(--line);
 }
 .sponsor-logo {
-  width:85px; height:65px; object-fit:contain; background:var(--paper);
-  border-radius:4px; padding:4px;
+  width:80px; height:80px; object-fit:contain; background:var(--paper);
+  border-radius:6px; padding:4px; border:1px solid var(--line);
 }
-.sponsor-art { height:65px; display:grid; place-items:center; background:var(--paper); color:var(--walnut); font-size:13px; font-weight:bold; border-radius:4px; }
-.sponsor h3 { font-size:15px; margin:0; font-weight:500; }
-.sponsor .kana { font-size:10px; color:var(--muted); font-weight:normal; }
+.sponsor h3 { font-size:15px; margin:0; font-weight:500; color:var(--walnut); }
+.sponsor .kana { font-size:11px; color:var(--muted); font-weight:normal; }
 .sponsor p { font-size:11px; line-height:1.5; color:var(--muted); margin:3px 0; }
 .sponsor a { font-size:11px; color:var(--amber); font-weight:bold; }
 
-.mail-panel { background:#eee4d4; padding:22px; border-radius:6px; border:1px solid var(--line); }
+.mail-panel { background:#eee4d4; padding:22px; border-radius:8px; border:1px solid var(--line); }
 .mail-panel p { font-size:13px; }
 .mail-panel .button { background:var(--olive); width:100%; justify-content:center; }
-.mic-note { margin-top:18px; color:var(--muted); font-size:12px; font-style:italic; }
+.mic-note { margin-top:16px; color:var(--muted); font-size:12px; font-style:italic; }
 
-footer { background:var(--walnut); color:var(--ivory); padding:35px 0; }
-.footer-inner { display:flex; justify-content:space-between; gap:20px; align-items:flex-start; }
-footer p, footer small { font-size:12px; color:#d6c9b7; }
-footer strong { font-size:18px; font-weight:500; }
+footer { background:var(--walnut); color:var(--ivory); padding:35px 0; margin-top:40px; }
+.footer-inner { display:flex; justify-content:space-between; gap:20px; align-items:center; }
+footer p, footer small { font-size:12px; color:#d6c9b7; margin:0; }
+footer strong { font-size:17px; font-weight:500; }
 
-@media (max-width:900px) {
+@media (max-width:960px) {
   .intro-grid { grid-template-columns:1fr; }
-  .intro-copy { border-right:0; padding-right:0; }
+  .intro-copy { border-right:0; padding-right:0; margin-bottom:20px; }
   .lower-grid { grid-template-columns:1fr; }
-  .panel + .panel { border-left:0; padding-left:0; padding-top:20px; border-top:1px solid var(--line); }
+  .panel + .panel { border-left:0; padding-left:0; padding-top:24px; border-top:1px solid var(--line); }
 }
 @media (max-width:600px) {
   .wrap, .hero-content { width:min(100% - 28px, 1120px); }
   .header-inner { align-items:flex-start; flex-direction:column; padding:14px 0; gap:12px; }
   nav { flex-wrap:wrap; gap:12px; }
-  .hero { min-height:480px; }
-  .hero h1 { font-size:36px; }
+  .hero { min-height:420px; }
+  .hero h1 { font-size:34px; }
   .people { grid-template-columns:1fr; }
-  .footer-inner { flex-direction:column; }
+  .footer-inner { flex-direction:column; align-items:flex-start; gap:10px; }
 }
 </style>
 </head>
@@ -181,29 +190,37 @@ footer strong { font-size:18px; font-weight:500; }
     <div>
       <h2 class="section-title">登場人物 <small>CHARACTERS</small></h2>
       <div class="people">
-        <!-- 上野隆盛（メインパーソナリティ：先に掲載） -->
+        <!-- 上野隆盛（メインパーソナリティ：必ず先に掲載） -->
         <article class="person">
-          <h3>上野 隆盛</h3>
-          <div class="kana">うえの りゅうせい</div>
-          <span class="role">メインパーソナリティ</span>
+          <img src="assets/profile-ueno-v3.jpg" onerror="this.src='profile-ueno-v3.jpg'" alt="上野隆盛 准教授" class="person-photo" width="300" height="300">
+          <div class="person-header">
+            <h3>上野 隆盛</h3>
+            <div class="kana">うえの りゅうせい</div>
+            <span class="role">メインパーソナリティ</span>
+          </div>
           <ul class="person-profile">
             <li><strong>職位:</strong> 工学博士・准教授（27歳）</li>
-            <li><strong>体格:</strong> 190cm / 80kg</li>
-            <li><strong>住居:</strong> 一戸建て・妻子持ち</li>
-            <li><strong>特徴:</strong> 背が高く、手が大きい。INTP。</li>
+            <li><strong>体格:</strong> 190cm / 80kg（筋肉質・すらっとした縦長シルエット）</li>
+            <li><strong>外見:</strong> 一重の横浜流星イメージ（明確なイケメン）</li>
+            <li><strong>服装:</strong> 常時ユニクロの紺色セットアップ</li>
+            <li><strong>住居:</strong> 一戸建て（妻子持ち）</li>
           </ul>
         </article>
 
-        <!-- 滝沢朗（共同パーソナリティ：後に掲載） -->
+        <!-- 滝沢朗（共同パーソナリティ：必ず後に掲載） -->
         <article class="person">
-          <h3>滝沢 朗</h3>
-          <div class="kana">たきざわ あきら</div>
-          <span class="role">共同パーソナリティ</span>
+          <img src="assets/profile-takizawa-v3.jpg" onerror="this.src='profile-takizawa-v3.jpg'" alt="滝沢朗 准教授" class="person-photo" width="300" height="300">
+          <div class="person-header">
+            <h3>滝沢 朗</h3>
+            <div class="kana">たきざわ あきら</div>
+            <span class="role sub">共同パーソナリティ</span>
+          </div>
           <ul class="person-profile">
             <li><strong>職位:</strong> 工学博士・准教授（27歳）</li>
-            <li><strong>体格:</strong> 175cm / 100kg
-            <li><strong>住居:</strong> 橋の下</li>
-            <li><strong>特徴:</strong> 妹想いのバツ12。動物占いはキメラ。</li>
+            <li><strong>体格:</strong> 175cm / 100kg（色白・痩せ顔）</li>
+            <li><strong>外見:</strong> 若い大泉洋イメージのきつい天パ（親しみやすい顔立ち）</li>
+            <li><strong>服装:</strong> 落ち着いたエスニック調の服（露出した腕 / 指輪・腕チャーム）</li>
+            <li><strong>婚歴:</strong> バツ12（全10指の指輪＋腕チャーム2個）</li>
           </ul>
         </article>
       </div>
@@ -217,13 +234,13 @@ footer strong { font-size:18px; font-weight:500; }
         <h3>各プラットフォームで配信中</h3>
         <p>最新エピソードは各種ポッドキャストサービスにてお聴きいただけます。</p>
         <div class="platform-links">
-          <a class="platform-btn" href="[suspicious link removed]" target="_blank" rel="noopener">
+          <a class="platform-btn" href="#" target="_blank" rel="noopener">
             <span>Apple Podcasts</span> ↗
           </a>
-          <a class="platform-btn" href="[suspicious link removed]" target="_blank" rel="noopener">
+          <a class="platform-btn" href="#" target="_blank" rel="noopener">
             <span>Spotify</span> ↗
           </a>
-          <a class="platform-btn" href="[suspicious link removed]" target="_blank" rel="noopener">
+          <a class="platform-btn" href="#" target="_blank" rel="noopener">
             <span>YouTube</span> ↗
           </a>
         </div>
@@ -233,7 +250,7 @@ footer strong { font-size:18px; font-weight:500; }
     <div class="panel" id="sponsors">
       <h2 class="section-title">協力企業 <small>SPONSORS</small></h2>
       <article class="sponsor">
-        <img class="sponsor-logo" src="assets/logo-sanada-pro-wrestling.png" alt="真田プロレス" onerror="this.outerHTML='<div class=\'sponsor-art\'>真田プロレス</div>'">
+        <img src="assets/logo-sanada-pro-wrestling.png" onerror="this.src='logo-sanada-pro-wrestling.png'" alt="真田プロレス ロゴ" class="sponsor-logo">
         <div>
           <h3>真田プロレス</h3>
           <p>忍びの流れをくむ、地域密着型プロレス団体。</p>
@@ -242,7 +259,7 @@ footer strong { font-size:18px; font-weight:500; }
       </article>
 
       <article class="sponsor">
-        <img class="sponsor-logo" src="assets/logo-tanukineiri-rvpark.png" alt="RVパーク たぬき寝入り" onerror="this.outerHTML='<div class=\'sponsor-art\'>たぬき寝入り</div>'">
+        <img src="assets/logo-tanukineiri-rvpark.png" onerror="this.src='logo-tanukineiri-rvpark.png'" alt="RVパーク たぬき寝入り ロゴ" class="sponsor-logo">
         <div>
           <h3>RVパーク「たぬき寝入り」</h3>
           <p>旅の途中に、心安らぐひと休みを。</p>
@@ -251,7 +268,7 @@ footer strong { font-size:18px; font-weight:500; }
       </article>
 
       <article class="sponsor">
-        <img class="sponsor-logo" src="assets/logo-shidashin-photo.png" alt="写真館 四田心" onerror="this.outerHTML='<div class=\'sponsor-art\'>四田心</div>'">
+        <img src="assets/logo-shitagokoro-photo.png" onerror="this.src='logo-shitagokoro-photo.png'" alt="写真館 四田心 ロゴ" class="sponsor-logo">
         <div>
           <h3>写真館 四田心 <span class="kana">（したごころ）</span></h3>
           <p>大切な瞬間を、ずっと、あなたのそばに。</p>
